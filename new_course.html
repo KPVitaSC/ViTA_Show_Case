@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			
+			<title>ViTA</title>
+			<!--Import Google Icon Font-->
+			<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+			<!--Import materialize.css-->
+			<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+			<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+			<!--Let browser know website is optimized for mobile-->
+			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+
+			<!-- New Course Styles -->
+			<link rel="stylesheet" type="text/css" href="./css/new_course.css">
+
+		</head>
+
+		<body>
+			<nav>
+				<div class="nav-wrapper grey">
+					<a href="./courses.html" class="brand-logo left">ViTA</a>
+					<ul class="right hide-on-med-and-down">
+						<li><a href="./courses.html">My Courses</a></li>
+						<li><a href="./new_course.html">Add Course</a></li>
+						<li><a href="./index.html">Login Out</a></li>
+					</ul>
+					<ul id="nav-mobile" class="side-nav">
+						<li><a href="./courses.html">My Courses</a></li>
+						<li><a href="./new_course.html">Add Course</a></li>
+						<li><a href="./index.html">Login Out</a></li>
+					</ul>
+				</div>
+			</nav>
+			<div class="divider"></div>
+			<div id="div" class="container col s12 m6 l3" >
+				<br><br>
+				<h5>New Course</h5>
+				<br>
+				<div id="div4">
+					Name:
+					<br>
+					<input id="1" type="text" name="course" placeholder="Name of new course" autofocus required >
+				</div>
+				<br><br>
+				<div  id="div1">
+					Content Structure:
+					<br>
+					<textarea id="ta1" name="EstructuraCurso" rows="10" cols="40" placeholder="Example:&#13;&#10;Unidad 1: Variables.&#13;&#10;-Tópico 1: Declaración de inicialización.&#13;&#10;-Tópico 2: Tipos de datos primitivos.&#13;&#10;Unidad 2: Decisiones.&#13;&#10;-Tópico 1: Comparaciones.&#13;&#10;-Tópico 2: if,if-else" required></textarea>
+					<br>
+					<input  class="btn-large" id="btn1" type="submit" value="Edit" disabled>
+					<input  class="btn-large" id="btn2" type="submit" value="Generate">
+					<br><br>
+				</div>
+				<div id="div2">
+					<div id="div3"></div>
+					 <input  class="btn-large" id="btn11" type="submit" value="Edit"><input  class="btn-large" id="btn22" type="submit" value="Generate" disabled>
+				</div>
+				<input  id="btn3" class="btn-large" type="submit" value="Create Course" disabled>
+				</div>
+			</div>
+	
+			<!--Import jQuery before materialize.js-->
+			<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+			<script type="text/javascript" src="js/materialize.min.js"></script>
+			<script src="./js/new_course.js"></script>
+		</body>
+	</html>

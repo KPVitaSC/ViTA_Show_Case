@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+	<title>ViTa</title>
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<!-- Estilos -->
+	<style type="text/css">
+		
+		#BodyContent, footer{
+			position: fixed;
+			width: 100%;
+		}		
+
+		#BodyContainer{
+			margin-top: 64px;
+			/* margin-bottom: 100px; */
+			margin-bottom: 50px;
+		}
+
+		footer{
+			bottom: 0px;
+		}
+
+		.tab>a.active{
+			font-weight: bolder;
+			border-width: 1px 1px 0px 1px;
+		    border-color: #000;
+		    border-style: solid;
+		    border-top-right-radius: 3px;
+		    border-top-left-radius: 3px;
+		}
+		
+		.tab>a:not(.active){
+			border-width: 0px 0px 1px 0px;
+		    border-color: #000;
+		    border-style: solid;
+		}
+
+		.tabs .indicator{
+			display: none;
+			background-color: #000 !important;
+		}
+		iframe{
+			width: 100%;
+			height: 500px;
+			border: none;
+
+		}
+	</style>
+
+	<!-- JQuery UI -->
+	<link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+	<!-- Barras -->
+	<!-- <link href="./css/barras.css" rel="stylesheet"/> -->
+
+	<!-- Bubbles -->
+	<link rel="stylesheet" type="text/css" href="./css/bubbles.css">
+
+
+</head>
+<body class="white">
+<!-- Versión de Kurt -->
+
+	<nav>
+				<div class="nav-wrapper grey">
+					<a href="./courses.html" class="brand-logo left">ViTA</a>
+					<ul class="right hide-on-med-and-down">
+						<li><a href="./courses.html">My Courses</a></li>
+						<li><a href="./new_course.html">Add Course</a></li>
+						<li><a href="./index.html">Login Out</a></li>
+					</ul>
+					<ul id="nav-mobile" class="side-nav">
+						<li><a href="./courses.html">My Courses</a></li>
+						<li><a href="./new_course.html">Add Course</a></li>
+						<li><a href="./index.html">Login Out</a></li>
+					</ul>
+				</div>
+			</nav>
+	<div class="divider"></div>
+	<div id="BodyContainer">
+		<div class="row">
+		    <div class="col s12">
+		      <ul class="tabs">
+		        <li class="tab col s4"><a href="#test1" class="black-text active">Matrix</a></li>
+		        <li class="tab col s4"><a href="#test2" class="black-text">Chemistry Lab</a></li>
+		        <li class="tab col s4"><a href="#test3" class="black-text">Bubbles</a></li>
+		      </ul>
+		    </div>
+		    <div id="test1" class="col s12 white">
+		    	<!-- <div>Contenedor
+		    					
+		    						<app-root></app-root>
+		    				    	Barras
+		    						<script type="text/javascript" src="./js/inline.50dd73327282e324402e.bundle.js"></script>
+		    						<script type="text/javascript" src="./js/polyfills.8eba0ab53b5457105d75.bundle.js"></script>
+		    						<script type="text/javascript" src="./js/scripts.02f0823deff997be5bd1.bundle.js"></script>
+		    						<script type="text/javascript" src="./js/vendor.ad89b554bb51fdd97881.bundle.js"></script>
+		    						<script type="text/javascript" src="./js/main.0f057d32461af24b6dca.bundle.js"></script>
+		    	
+		    					</div>Contenedor -->
+		    	<iframe src="./index_barras.html"></iframe>
+		    </div>
+		    <div id="test2" class="col s12 white">
+		    	Contenido de Claudio
+		    </div>
+		    <div id="test3" class="col s12 white">
+		    	<div id="vita_circles">
+		    </div>
+	  	</div>
+	</div>
+	<br>
+
+	<!-- JavaScript -->
+	
+	<!--Import jQuery before materialize.js-->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	
+	<!-- D3 -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+
+	<!-- Bubbles -->
+	<script src='./js/bubbles.js'></script>
+
+	<script>
+		$(document).ready(function(){
+		    $('ul.tabs').tabs();
+
+		});
+
+		/*(function(c,s){
+			//la data deviese entregarse cono un valor en settings
+			defaults = {
+				data: {}
+			};
+
+			settings = Object.assign({}, defaults, s);
+
+			//magia x acá
+
+
+			//
+
+		})(container,settings)*/
+	</script>
+</body>
+</html>

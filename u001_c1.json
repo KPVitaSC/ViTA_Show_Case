@@ -1,0 +1,513 @@
+{
+	"course": {
+		"id": "1",
+		"name": "Introducción a la Programación",
+		"units": [
+
+			{
+				"id": "1",
+				"name": "Unidad 1: Variables",
+				"topics": [{
+						"id": "1",
+						"name": "Declaración en Inicialización"
+					},
+					{
+						"id": "2",
+						"name": "Tipos de Datos Primitivos"
+					},
+					{
+						"id": "3",
+						"name": "Operaciones Aritméticas"
+					},
+					{
+						"id": "4",
+						"name": "División de enteros"
+					},
+					{
+						"id": "5",
+						"name": "Operador Módulo (%)"
+					},
+					{
+						"id": "6",
+						"name": "Variables Strings"
+					},
+					{
+						"id": "7",
+						"name": "Entrada y Salida"
+					},
+					{
+						"id": "8",
+						"name": "Conversión de números y Strings"
+					}
+				]
+			},
+			{
+				"id": "2",
+				"name": "Unidad 2: Decisiones",
+				"topics": [{
+						"id": "9",
+						"name": "Comparaciones"
+					},
+					{
+						"id": "10",
+						"name": "If, If-else"
+					},
+					{
+						"id": "11",
+						"name": "Nested and chained ifs"
+					},
+					{
+						"id": "12",
+						"name": "Switch"
+					}
+				]
+			},
+			{
+				"id": "3",
+				"name": "Unidad 3: Expresiones Booleanas",
+				"topics": [{
+						"id": "13",
+						"name": "Tipo boolean"
+					},
+					{
+						"id": "14",
+						"name": "And"
+					},
+					{
+						"id": "15",
+						"name": "Or"
+					},
+					{
+						"id": "16",
+						"name": "Not"
+					}
+				]
+			},
+			{
+				"id": "4",
+				"name": "Unidad 4: Loops",
+				"topics": [{
+						"id": "17",
+						"name": "while"
+					},
+					{
+						"id": "18",
+						"name": "do-while"
+					},
+					{
+						"id": "19",
+						"name": "for"
+					},
+					{
+						"id": "20",
+						"name": "Nested loops"
+					}
+				]
+			},
+			{
+				"id": "5",
+				"name": "Unidad 5: Arreglos",
+				"topics": [{
+						"id": "21",
+						"name": "Declare and initialize an array"
+					},
+					{
+						"id": "22",
+						"name": "Arrays of objects"
+					},
+					{
+						"id": "23",
+						"name": "Recorrer un arreglo"
+					},
+					{
+						"id": "24",
+						"name": "for-each"
+					},
+					{
+						"id": "25",
+						"name": "Métodos y arreglos"
+					},
+					{
+						"id": "26",
+						"name": "ArrayLists"
+					}
+				]
+			}
+		]
+	},
+
+	"learnerState": {
+		"learnerId": "u001",
+		"courseId": "1",
+		"topics": [{
+				"topicId": "1",
+				"difficultyLevel": "5",
+				"skillLevel": "5"
+			},
+			{
+				"topicId": "2",
+				"difficultyLevel": "1",
+				"skillLevel": "4"
+			},
+			{
+				"topicId": "3",
+				"difficultyLevel": "1",
+				"skillLevel": "5"
+			},
+			{
+				"topicId": "4",
+				"difficultyLevel": "2",
+				"skillLevel": "5"
+			},
+			{
+				"topicId": "5",
+				"difficultyLevel": "3",
+				"skillLevel": "3"
+			},
+			{
+				"topicId": "6",
+				"difficultyLevel": "2",
+				"skillLevel": "3"
+			},
+			{
+				"topicId": "7",
+				"difficultyLevel": "2",
+				"skillLevel": "4"
+			},
+			{
+				"topicId": "8",
+				"difficultyLevel": "3",
+				"skillLevel": "3"
+			},
+			{
+				"topicId": "9",
+				"difficultyLevel": "1",
+				"skillLevel": "4"
+			},
+			{
+				"topicId": "10",
+				"difficultyLevel": "2",
+				"skillLevel": "4"
+			},
+			{
+				"topicId": "11",
+				"difficultyLevel": "3",
+				"skillLevel": "1"
+			},
+			{
+				"topicId": "12",
+				"difficultyLevel": "4",
+				"skillLevel": "2"
+			},
+			{
+				"topicId": "13",
+				"difficultyLevel": "1",
+				"skillLevel": "3"
+			},
+			{
+				"topicId": "14",
+				"difficultyLevel": "3",
+				"skillLevel": "4"
+			},
+			{
+				"topicId": "15",
+				"difficultyLevel": "5",
+				"skillLevel": "4"
+			},
+			{
+				"topicId": "16",
+				"difficultyLevel": "4",
+				"skillLevel": "3"
+			},
+			{
+				"topicId": "17",
+				"difficultyLevel": "2",
+				"skillLevel": "4"
+			},
+			{
+				"topicId": "18",
+				"difficultyLevel": "0",
+				"skillLevel": "2"
+			},
+			{
+				"topicId": "19",
+				"difficultyLevel": "3",
+				"skillLevel": "3"
+			},
+			{
+				"topicId": "20",
+				"difficultyLevel": "0",
+				"skillLevel": "1"
+			},
+			{
+				"topicId": "21",
+				"difficultyLevel": "0",
+				"skillLevel": "1"
+			},
+			{
+				"topicId": "22",
+				"difficultyLevel": "1",
+				"skillLevel": "1"
+			},
+			{
+				"topicId": "23",
+				"difficultyLevel": "2",
+				"skillLevel": "1"
+			},
+			{
+				"topicId": "24",
+				"difficultyLevel": "3",
+				"skillLevel": "1"
+			},
+			{
+				"topicId": "25",
+				"difficultyLevel": "4",
+				"skillLevel": "1"
+			},
+			{
+				"topicId": "26",
+				"difficultyLevel": "5",
+				"skillLevel": "1"
+			}
+		]
+	},
+	"groupState": {
+		"id": "avg1",
+		"name": "All class",
+		"courseId": "1",
+		"learnersCount": 21,
+		"activeLearners": ["u001", "u017", "u025", "u004"],
+		"topicLevels": [{
+				"topicId": "1",
+				"difficultyLevel": 2,
+				"difficultyLevelLCount": 14,
+				"skillLevel": 3,
+				"skillLevelLCount": 14
+			},
+			{
+				"topicId": "2",
+				"difficultyLevel": 2,
+				"difficultyLevelLCount": 12,
+				"skillLevel": 2,
+				"skillLevelLCount": 12
+			},
+			{
+				"topicId": "3",
+				"difficultyLevel": 3,
+				"difficultyLevelLCount": 14,
+				"skillLevel": 4,
+				"skillLevelLCount": 14
+			},
+			{
+				"topicId": "4",
+				"difficultyLevel": 4,
+				"difficultyLevelLCount": 8,
+				"skillLevel": 2,
+				"skillLevelLCount": 8
+			},
+			{
+				"topicId": "5",
+				"difficultyLevel": 4,
+				"difficultyLevelLCount": 5,
+				"skillLevel": 2,
+				"skillLevelLCount": 5
+			},
+			{
+				"topicId": "6",
+				"difficultyLevel": 3,
+				"difficultyLevelLCount": 8,
+				"skillLevel": 3,
+				"skillLevelLCount": 8
+			},
+			{
+				"topicId": "7",
+				"difficultyLevel": 2,
+				"difficultyLevelLCount": 9,
+				"skillLevel": 4,
+				"skillLevelLCount": 9
+			},
+			{
+				"topicId": "8",
+				"difficultyLevel": 2,
+				"difficultyLevelLCount": 9,
+				"skillLevel": 1,
+				"skillLevelLCount": 9
+			},
+			{
+				"topicId": "9",
+				"difficultyLevel": 1,
+				"difficultyLevelLCount": 5,
+				"skillLevel": 4,
+				"skillLevelLCount": 5
+			},
+			{
+				"topicId": "10",
+				"difficultyLevel": 3,
+				"difficultyLevelLCount": 5,
+				"skillLevel": 3,
+				"skillLevelLCount": 5
+			},
+			{
+				"topicId": "11",
+				"difficultyLevel": 4,
+				"difficultyLevelLCount": 4,
+				"skillLevel": 2,
+				"skillLevelLCount": 4
+			},
+			{
+				"topicId": "12",
+				"difficultyLevel": 0,
+				"difficultyLevelLCount": 3,
+				"skillLevel": 1,
+				"skillLevelLCount": 3
+			},
+			{
+				"topicId": "13",
+				"difficultyLevel": 2,
+				"difficultyLevelLCount": 7,
+				"skillLevel": 3,
+				"skillLevelLCount": 7
+			},
+			{
+				"topicId": "14",
+				"difficultyLevel": 3,
+				"difficultyLevelLCount": 7,
+				"skillLevel": 3,
+				"skillLevelLCount": 7
+			},
+			{
+				"topicId": "15",
+				"difficultyLevel": 3,
+				"difficultyLevelLCount": 8,
+				"skillLevel": 3,
+				"skillLevelLCount": 8
+			},
+			{
+				"topicId": "16",
+				"difficultyLevel": 3,
+				"difficultyLevelLCount": 6,
+				"skillLevel": 2,
+				"skillLevelLCount": 6
+			},
+			{
+				"topicId": "17",
+				"difficultyLevel": 2,
+				"difficultyLevelLCount": 6,
+				"skillLevel": 3,
+				"skillLevelLCount": 6
+			},
+			{
+				"topicId": "18",
+				"difficultyLevel": 3,
+				"difficultyLevelLCount": 5,
+				"skillLevel": 2,
+				"skillLevelLCount": 5
+			},
+			{
+				"topicId": "19",
+				"difficultyLevel": 3,
+				"difficultyLevelLCount": 7,
+				"skillLevel": 3,
+				"skillLevelLCount": 7
+			},
+			{
+				"topicId": "20",
+				"difficultyLevel": 5,
+				"difficultyLevelLCount": 4,
+				"skillLevel": 2,
+				"skillLevelLCount": 4
+			},
+			{
+				"topicId": "21",
+				"difficultyLevel": 2,
+				"difficultyLevelLCount": 3,
+				"skillLevel": 2,
+				"skillLevelLCount": 3
+			},
+			{
+				"topicId": "22",
+				"difficultyLevel": 3,
+				"difficultyLevelLCount": 2,
+				"skillLevel": 1,
+				"skillLevelLCount": 2
+			},
+			{
+				"topicId": "23",
+				"difficultyLevel": 3,
+				"difficultyLevelLCount": 2,
+				"skillLevel": 3,
+				"skillLevelLCount": 2
+			},
+			{
+				"topicId": "24",
+				"difficultyLevel": 2,
+				"difficultyLevelLCount": 3,
+				"skillLevel": 1,
+				"skillLevelLCount": 3
+			},
+			{
+				"topicId": "25",
+				"difficultyLevel": 4,
+				"difficultyLevelLCount": 0,
+				"skillLevel": 1,
+				"skillLevelLCount": 0
+			},
+			{
+				"topicId": "26",
+				"difficultyLevel": 5,
+				"difficultyLevelLCount": 0,
+				"skillLevel": 2,
+				"skillLevelLCount": 0
+			}
+		]
+	},
+	"contributions": [{
+			"id": "1",
+			"courseId": "1",
+			"topicId": "1",
+			"contributorId": "u001",
+			"url": "xxxx",
+			"keywords": ["declaring variables"]
+		},
+		{
+			"id": "2",
+			"courseId": "1",
+			"topicId": "2",
+			"contributorId": "u001",
+			"url": "xx",
+			"keywords": ["data types", "java", "numbers"]
+		},
+		{
+			"id": "3",
+			"courseId": "1",
+			"topicId": "3",
+			"contributorId": "u003",
+			"url": "xxxxx",
+			"keywords": ["basic operations"]
+		},
+		{
+			"id": "4",
+			"courseId": "1",
+			"topicId": "4",
+			"contributorId": "u014",
+			"url": "xx",
+			"keywords": []
+		},
+		{
+			"id": "5",
+			"courseId": "1",
+			"topicId": "4",
+			"contributorId": "u004",
+			"url": "xxxxxxxxx",
+			"keywords": ["integer division"]
+		},
+		{
+			"id": "6",
+			"courseId": "1",
+			"topicId": "8",
+			"contributorId": "u001",
+			"url": "xxxxx",
+			"keywords": ["string to number", "java"]
+		}
+	]
+}

@@ -1,0 +1,86 @@
+#mainBubble {
+    background: #fff;
+    border: solid 1px #ddd;
+    box-shadow: 0 0 4px rgba(0,0,0,0);
+    font: 10px sans-serif;
+    height: 800px;
+    position: relative;
+    width: 100%;
+    overflow: hidden;    
+}
+#mainBubble svg {
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+#information{
+    overflow: hidden;
+    text-align: center;
+}
+#info_gen{
+    float: left; 
+    width: 33%;
+}
+#info_me{
+    float: left; 
+    width: 33%;
+}
+#info_group{
+    float: left; 
+    width: 33%;
+}
+#leyenda{
+    overflow: hidden;
+}
+#type_difficulty{
+    float: left; 
+    width: 49%;
+    text-align: center;
+    overflow: hidden;
+}
+#type_skill{
+    float: left; 
+    width: 49%;
+    text-align: center;
+}
+.text{
+    width: 14%;
+    float: left;
+}
+#color_diff{
+    margin: 1%;
+    float: left; 
+    height: 10px;
+    width: 70%;
+    background: linear-gradient(to right, #1a9641,#a6d96a,#ffffbf,#fdae61,#d7191c); 
+}
+.valor_skill{
+    margin: 1%;
+    float: left;
+    height: 40px; 
+    width: 40px;
+    border-radius: 50%;
+}
+#skill_1{
+    border: solid 1px #666;
+}
+#skill_2{
+    border: solid 4px #666;
+}
+#skill_3{
+    border: solid 7px #666;
+}
+#skill_4{
+    border: solid 10px #666;
+}
+#skill_5{
+    border: solid 13px #666;
+}
+#vis_me{
+    overflow: hidden;
+    height: 75px;
+}
+#vis_group{
+    overflow: hidden;
+    height: 75px;
+}
