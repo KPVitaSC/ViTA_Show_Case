@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+		<title>Vial Preview</title>
+		<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<style>
+			#container{
+		height:80%;
+		width:980px;
+		background-color:white;
+		margin:auto;
+		}
+			#logo{
+		width:80%;
+		background-color:white;
+		margin:auto;
+		font-size:150%;
+		float:left;
+		}
+		#bottles{
+		padding-left:40px;
+		width:980px;
+		height:300px;
+		background-color:white;
+		margin:inherit;
+		clear:left;
+		}
+		#bottle_info{
+		width:80%;
+		height:120px;
+		background-color:white;
+		margin:auto;
+		}
+		#vial_container{
+		width:940px;
+		height:160px;
+		background-color:white;
+		border-style:solid;
+		border-width:15px;
+		border-color:burlywood;
+		margin:auto;
+		}
+		#vials{
+		height:160px;
+		background-color:white;
+		width:600px;
+		float:left;
+		}
+		#vial_info{
+		height:161px;
+		width:300px;
+		background-color:white;
+		border-style:none none none solid;
+		border-width:15px;
+		border-color:burlywood;
+		float:right;
+		}
+		#vial_preview{
+		height:145px;
+		width:80px;
+		background-color:white;
+		float:left;
+		}
+		#vial_text{
+		height:145px;
+		width:220px;
+		background-color:white;
+		float:left;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="logo">
+				<svg height="160" width="200">
+					<g>
+						<polygon points="36,40 44,40 44,56 72,116 72,120 68,124 12,124 8,120 8,116 36,56"
+						style="fill:mediumseagreen;opacity:0,8;stroke:none"></polygon>
+						<polygon points="32,20 36,24 44,24 44,56 72,116 72,120 68,124 12,124 8,120 8,116 36,56 36,24 44,24 48,20"
+						style="fill:ivory;stroke-width:1;stroke:dimgrey;stroke-opacity:1;fill-opacity:0.1"></polygon>
+						<text x="30" y="120" font-family="Verdana" font-size="70" fill="black">
+						Vial
+						</text>
+						<text x="10" y="140" font-family="Verdana" font-size="12" fill="black">
+						Visualiza tu aprendizaje.
+						</text>
+					</g>
+				</svg>
+			</div>
+			<div id="bottles">
+				
+			</div>
+			<div id="bottle_info">
+				Descripción de la asignatura.
+			</div>
+			<div id="vial_container">
+				<div id="vials">
+				</div>
+				<div id="vial_info">
+					<div id="vial_preview">
+					</div>
+					<div id="vial_text">
+						Comparación con el curso y aportes.
+						a la izq debe ir la botella que representa el tópico seleccionado del curso en general.
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+		var courseInfo =
+		{
+			"course": {
+				"id": "1",
+				"name": "Introducción a la Programación",
+				"units": [
+					{
+						"id": "1",
+						"name": "Unidad 1: Variables",
+						"topics": [{
+								"id": "1",
+								"name": "Declaración en Inicialización"
+							},
+							{
+								"id": "2",
+								"name": "Tipos de Datos Primitivos"
+							},
+							{
+								"id": "3",
+								"name": "Operaciones Aritméticas"
+							},
+							{
+								"id": "4",
+								"name": "División de enteros"
+							},
+							{
+								"id": "5",
+								"name": "Operador Módulo (%)"
+							},
+							{
+								"id": "6",
+								"name": "Variables Strings"
+							},
+							{
+								"id": "7",
+								"name": "Entrada y Salida"
+							},
+							{
+								"id": "8",
+								"name": "Conversión de números y Strings"
+							}
+						]
+					},
+					{
+						"id": "2",
+						"name": "Unidad 2: Decisiones",
+						"topics": [{
+								"id": "9",
+								"name": "Comparaciones"
+							},
+							{
+								"id": "10",
+								"name": "If, If-else"
+							},
+							{
+								"id": "11",
+								"name": "Nested and chained ifs"
+							},
+							{
+								"id": "12",
+								"name": "Switch"
+							}
+						]
+					},
+					{
+						"id": "3",
+						"name": "Unidad 3: Expresiones Booleanas",
+						"topics": [{
+								"id": "13",
+								"name": "Tipo boolean"
+							},
+							{
+								"id": "14",
+								"name": "And"
+							},
+							{
+								"id": "15",
+								"name": "Or"
+							},
+							{
+								"id": "16",
+								"name": "Not"
+							}
+						]
+					},
+					{
+						"id": "4",
+						"name": "Unidad 4: Loops",
+						"topics": [{
+								"id": "17",
+								"name": "while"
+							},
+							{
+								"id": "18",
+								"name": "do-while"
+							},
+							{
+								"id": "19",
+								"name": "for"
+							},
+							{
+								"id": "20",
+								"name": "Nested loops"
+							}
+						]
+					},
+					{
+						"id": "5",
+						"name": "Unidad 5: Arreglos",
+						"topics": [{
+								"id": "21",
+								"name": "Declare and initialize an array"
+							},
+							{
+								"id": "22",
+								"name": "Arrays of objects"
+							},
+							{
+								"id": "23",
+								"name": "Recorrer un arreglo"
+							},
+							{
+								"id": "24",
+								"name": "for-each"
+							},
+							{
+								"id": "25",
+								"name": "Métodos y arreglos"
+							},
+							{
+								"id": "26",
+								"name": "ArrayLists"
+							}
+						]
+					}
+				]
+			},
+			"learnerState": {
+				"learnerId": "u001",
+				"courseId": "1",
+				"topics": [{
+						"topicId": "1",
+						"difficultyLevel": "2",
+						"skillLevel": "5"
+					},
+					{
+						"topicId": "2",
+						"difficultyLevel": "1",
+						"skillLevel": "4"
+					},
+					{
+						"topicId": "3",
+						"difficultyLevel": "1",
+						"skillLevel": "5"
+					},
+					{
+						"topicId": "4",
+						"difficultyLevel": "2",
+						"skillLevel": "5"
+					},
+					{
+						"topicId": "5",
+						"difficultyLevel": "3",
+						"skillLevel": "3"
+					},
+					{
+						"topicId": "6",
+						"difficultyLevel": "2",
+						"skillLevel": "3"
+					},
+					{
+						"topicId": "7",
+						"difficultyLevel": "2",
+						"skillLevel": "4"
+					},
+					{
+						"topicId": "8",
+						"difficultyLevel": "3",
+						"skillLevel": "3"
+					},
+					{
+						"topicId": "9",
+						"difficultyLevel": "1",
+						"skillLevel": "4"
+					},
+					{
+						"topicId": "10",
+						"difficultyLevel": "2",
+						"skillLevel": "4"
+					},
+					{
+						"topicId": "11",
+						"difficultyLevel": "3",
+						"skillLevel": "1"
+					},
+					{
+						"topicId": "12",
+						"difficultyLevel": "0",
+						"skillLevel": "2"
+					},
+					{
+						"topicId": "13",
+						"difficultyLevel": "1",
+						"skillLevel": "3"
+					},
+					{
+						"topicId": "14",
+						"difficultyLevel": "3",
+						"skillLevel": "4"
+					},
+					{
+						"topicId": "15",
+						"difficultyLevel": "0",
+						"skillLevel": "4"
+					},
+					{
+						"topicId": "16",
+						"difficultyLevel": "0",
+						"skillLevel": "3"
+					},
+					{
+						"topicId": "17",
+						"difficultyLevel": "2",
+						"skillLevel": "4"
+					},
+					{
+						"topicId": "18",
+						"difficultyLevel": "0",
+						"skillLevel": "2"
+					},
+					{
+						"topicId": "19",
+						"difficultyLevel": "3",
+						"skillLevel": "3"
+					},
+					{
+						"topicId": "20",
+						"difficultyLevel": "0",
+						"skillLevel": "1"
+					},
+					{
+						"topicId": "21",
+						"difficultyLevel": "0",
+						"skillLevel": "1"
+					},
+					{
+						"topicId": "22",
+						"difficultyLevel": "0",
+						"skillLevel": "1"
+					},
+					{
+						"topicId": "23",
+						"difficultyLevel": "0",
+						"skillLevel": "1"
+					},
+					{
+						"topicId": "24",
+						"difficultyLevel": "0",
+						"skillLevel": "1"
+					},
+					{
+						"topicId": "25",
+						"difficultyLevel": "0",
+						"skillLevel": "1"
+					},
+					{
+						"topicId": "26",
+						"difficultyLevel": "0",
+						"skillLevel": "1"
+					}
+				]
+			},
+			"groupState": {
+				"id": "avg1",
+				"name": "All class",
+				"courseId": "1",
+				"learnersCount": 21,
+				"activeLearners": ["u001", "u017", "u025", "u004"],
+				"topicLevels": [{
+						"topicId": "1",
+						"difficultyLevel": 2,
+						"difficultyLevelLCount": 14,
+						"skillLevel": 3,
+						"skillLevelLCount": 14
+					},
+					{
+						"topicId": "2",
+						"difficultyLevel": 2,
+						"difficultyLevelLCount": 12,
+						"skillLevel": 2,
+						"skillLevelLCount": 12
+					},
+					{
+						"topicId": "3",
+						"difficultyLevel": 3,
+						"difficultyLevelLCount": 14,
+						"skillLevel": 4,
+						"skillLevelLCount": 14
+					},
+					{
+						"topicId": "4",
+						"difficultyLevel": 4,
+						"difficultyLevelLCount": 8,
+						"skillLevel": 2,
+						"skillLevelLCount": 8
+					},
+					{
+						"topicId": "5",
+						"difficultyLevel": 4,
+						"difficultyLevelLCount": 5,
+						"skillLevel": 2,
+						"skillLevelLCount": 5
+					},
+					{
+						"topicId": "6",
+						"difficultyLevel": 3,
+						"difficultyLevelLCount": 8,
+						"skillLevel": 3,
+						"skillLevelLCount": 8
+					},
+					{
+						"topicId": "7",
+						"difficultyLevel": 2,
+						"difficultyLevelLCount": 9,
+						"skillLevel": 4,
+						"skillLevelLCount": 9
+					},
+					{
+						"topicId": "8",
+						"difficultyLevel": 2,
+						"difficultyLevelLCount": 9,
+						"skillLevel": 1,
+						"skillLevelLCount": 9
+					},
+					{
+						"topicId": "9",
+						"difficultyLevel": 1,
+						"difficultyLevelLCount": 5,
+						"skillLevel": 4,
+						"skillLevelLCount": 5
+					},
+					{
+						"topicId": "10",
+						"difficultyLevel": 3,
+						"difficultyLevelLCount": 5,
+						"skillLevel": 3,
+						"skillLevelLCount": 5
+					},
+					{
+						"topicId": "11",
+						"difficultyLevel": 4,
+						"difficultyLevelLCount": 4,
+						"skillLevel": 2,
+						"skillLevelLCount": 4
+					},
+					{
+						"topicId": "12",
+						"difficultyLevel": 0,
+						"difficultyLevelLCount": 3,
+						"skillLevel": 1,
+						"skillLevelLCount": 3
+					},
+					{
+						"topicId": "13",
+						"difficultyLevel": 2,
+						"difficultyLevelLCount": 7,
+						"skillLevel": 3,
+						"skillLevelLCount": 7
+					},
+					{
+						"topicId": "14",
+						"difficultyLevel": 3,
+						"difficultyLevelLCount": 7,
+						"skillLevel": 3,
+						"skillLevelLCount": 7
+					},
+					{
+						"topicId": "15",
+						"difficultyLevel": 3,
+						"difficultyLevelLCount": 8,
+						"skillLevel": 3,
+						"skillLevelLCount": 8
+					},
+					{
+						"topicId": "16",
+						"difficultyLevel": 3,
+						"difficultyLevelLCount": 6,
+						"skillLevel": 2,
+						"skillLevelLCount": 6
+					},
+					{
+						"topicId": "17",
+						"difficultyLevel": 2,
+						"difficultyLevelLCount": 6,
+						"skillLevel": 3,
+						"skillLevelLCount": 6
+					},
+					{
+						"topicId": "18",
+						"difficultyLevel": 3,
+						"difficultyLevelLCount": 5,
+						"skillLevel": 2,
+						"skillLevelLCount": 5
+					},
+					{
+						"topicId": "19",
+						"difficultyLevel": 3,
+						"difficultyLevelLCount": 7,
+						"skillLevel": 3,
+						"skillLevelLCount": 7
+					},
+					{
+						"topicId": "20",
+						"difficultyLevel": 5,
+						"difficultyLevelLCount": 4,
+						"skillLevel": 2,
+						"skillLevelLCount": 4
+					},
+					{
+						"topicId": "21",
+						"difficultyLevel": 2,
+						"difficultyLevelLCount": 3,
+						"skillLevel": 2,
+						"skillLevelLCount": 3
+					},
+					{
+						"topicId": "22",
+						"difficultyLevel": 3,
+						"difficultyLevelLCount": 2,
+						"skillLevel": 1,
+						"skillLevelLCount": 2
+					},
+					{
+						"topicId": "23",
+						"difficultyLevel": 3,
+						"difficultyLevelLCount": 2,
+						"skillLevel": 3,
+						"skillLevelLCount": 2
+					},
+					{
+						"topicId": "24",
+						"difficultyLevel": 2,
+						"difficultyLevelLCount": 3,
+						"skillLevel": 1,
+						"skillLevelLCount": 3
+					},
+					{
+						"topicId": "25",
+						"difficultyLevel": 4,
+						"difficultyLevelLCount": 0,
+						"skillLevel": 1,
+						"skillLevelLCount": 0
+					},
+					{
+						"topicId": "26",
+						"difficultyLevel": 5,
+						"difficultyLevelLCount": 0,
+						"skillLevel": 2,
+						"skillLevelLCount": 0
+					}
+				]
+			},
+			"contributions": [{
+					"id": "1",
+					"courseId": "1",
+					"topicId": "1",
+					"contributorId": "u001",
+					"url": "xxxx",
+					"keywords": ["declaring variables"]
+				},
+				{
+					"id": "2",
+					"courseId": "1",
+					"topicId": "2",
+					"contributorId": "u001",
+					"url": "xx",
+					"keywords": ["data types", "java", "numbers"]
+				},
+				{
+					"id": "3",
+					"courseId": "1",
+					"topicId": "3",
+					"contributorId": "u003",
+					"url": "xxxxx",
+					"keywords": ["basic operations"]
+				},
+				{
+					"id": "4",
+					"courseId": "1",
+					"topicId": "4",
+					"contributorId": "u014",
+					"url": "xx",
+					"keywords": []
+				},
+				{
+					"id": "5",
+					"courseId": "1",
+					"topicId": "4",
+					"contributorId": "u004",
+					"url": "xxxxxxxxx",
+					"keywords": ["integer division"]
+				},
+				{
+					"id": "6",
+					"courseId": "1",
+					"topicId": "8",
+					"contributorId": "u001",
+					"url": "xxxxx",
+					"keywords": ["string to number", "java"]
+				}
+			]
+		}
+		
+		var dataset=[[1,1],[2,2],[3,3],[4,4],[5,5]];
+		d3.select("#logo").append("p").text(courseInfo.course.name);
+			var bigboi = d3.select("#bottles").selectAll("omgxd")
+			.data(dataset)
+		.enter()
+		.append("svg")
+		.attr("width", 160)
+		.attr("height", 320)
+		
+		bigboi.append("polygon")
+		.attr("points", function(d){
+			if(d[1]==1){return "16,240 144,240 136,248 24,248"}
+		else if(d[1]==2){return "30.8,200 129.2,200 144,232 144,240 136,248 24,248 16,240 16,232"}
+		else if(d[1]==3){return "49.6,160 110.4,160 144,232 144,240 136,248 24,248 16,240 16,232"}
+		else if(d[1]==4){return "68.2,120 91.8,120 144,232 144,240 136,248 24,248 16,240 16,232"}
+		else if(d[1]==5){return " 72,80 88,80 88,112 144,232 144,240 136,248 24,248 16,240 16,232 72,112"}
+		else{}
+		}
+		)
+		.attr("stroke","none")
+		.style("fill", function(d){ if(d[0]==1){return "mediumseagreen"} else if(d[0]==2){return "yellowgreen"} else if(d[0]==3){return "yellow"} else if(d[0]==4){return "orange"} else if(d[0]==5){return "tomato"} else{return "gray"}})
+		.style("opacity",0.8)
+			;
+			bigboi.append("polygon")
+		.attr("points", "64,40 72,48 88,48 88,112 144,232 144,240 136,248 24,248 16,240 16,232 72,112 72,48 88,48 96,40")
+		.attr("stroke","dimgrey")
+		.style("stroke-opacity",1)
+		.style("fill", "ivory")
+		.style("fill-opacity",0.1)
+		;
+		bigboi.append("text")
+		.attr("x",15)
+		.attr("y",270)
+		.text(function(d,i){return courseInfo.course.units[i].name})
+		.style("fill","black")
+		;
+		var pickedUnitId = 1;
+		var tinyboi = d3.select("#vials").selectAll("createdVials")
+			.data(dataset)
+			.enter()
+			.append("svg")
+			.attr("width",80)
+			.attr("height",160)
+		
+		tinyboi.append("polygon")
+		.attr("points", function(d,i){
+		if (pickedUnitId==0){
+		if(courseInfo.learnerState.topics[0].skillLevel==5){return "34,120 46,120 46,120 44,124 36,124 34,120"}
+		else if(courseInfo.course.units[0].topics[i].skillLevel==2){return "34,100 46,100 46,120 44,124 36,124 34,120"}
+		else if(courseInfo.course.units[0].topics[i].skillLevel==3){return "34,80 46,80 46,120 44,124 36,124 34,120"}
+		else if(courseInfo.course.units[0].topics[i].skillLevel==4){return "34,60 46,60 46,120 44,124 36,124 34,120"}
+		else if(courseInfo.course.units[0].topics[i].skillLevel==5){return "34,40 46,40 46,120 44,124 36,124 34,120"}
+		}})
+		.attr("stroke","none")
+		.style("fill", function(d){ if(d[0]==1){return "mediumseagreen"} else if(d[0]==2){return "yellowgreen"} else if(d[0]==3){return "yellow"} else if(d[0]==4){return "orange"} else if(d[0]==5){return "tomato"} else{return "gray"}})
+		.style("opacity",0.8)
+			;
+		tinyboi.append("polygon")
+		.attr("points","32,20 34,24 46,24 46,120 44,124 36,124 34,120 34,24 46,24 48,20")
+		.style("fill","ivory")
+		.style("stroke","dimgrey")
+		.style("fill-opacity","0.1")
+		;
+		d3.select("#vial_preview");
+		</script>
+	</body>
+</html>
